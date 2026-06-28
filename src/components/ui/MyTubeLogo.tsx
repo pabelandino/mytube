@@ -1,0 +1,34 @@
+interface MyTubeLogoProps {
+  size?: number;
+  className?: string;
+}
+
+const OUTER_RX = 7;
+const INNER_RX = 4.5;
+
+export function MyTubeLogo({ size = 32, className }: MyTubeLogoProps) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      width={size}
+      height={size}
+      className={className}
+      aria-hidden="true"
+    >
+      <rect x="1" y="3.5" width="22" height="17" rx={OUTER_RX} ry={OUTER_RX} fill="#3ea6ff" />
+      <rect
+        x="7.25"
+        y="7.25"
+        width="9.5"
+        height="9.5"
+        rx={INNER_RX}
+        ry={INNER_RX}
+        fill="#fff"
+      />
+      <path
+        fill="#3ea6ff"
+        d="M11.1 10.4v3.2c0 .42.46.68.82.45l2.35-1.65c.31-.22.31-.71 0-.93l-2.35-1.65c-.36-.23-.82.03-.82.45z"
+      />
+    </svg>
+  );
+}
